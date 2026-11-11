@@ -1,0 +1,197 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Showroom Website</title>
+    <link rel="stylesheet" href="ex.css">
+</head>
+<body>
+
+    <!--Header & Navigation-->
+    <header>
+        <div class="logo">
+            <h1>Car Showroom Website</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cars">Cars</a></li>
+                <li><a href="#brands">Brands</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!--Main Section (Welcome Banner)-->
+    <section id="home" class="main-banner">
+        <h2>Welcome to Our Luxury Showroom</h2>
+        <p>Explore the finest collection of modern and classic automobiles.</p>
+    </section>
+
+    <!--Search Cars-->
+    <section class="search-section">
+        <h3>Search Cars</h3>
+        <input type="text" id="searchInput" placeholder="Search by brand or model..." onkeyup="searchCars()">
+    </section>
+
+    <!--Car Categories-->
+    <section id="brands" class="categories-section">
+        <h3>Car Categories</h3>
+        <div class="category-list">
+            <span class="tag">Sedan ,</span>
+            <span class="tag">SUV ,</span>
+            <span class="tag">Hatchback ,</span>
+            <span class="tag">Luxury ,</span>
+            <span class="tag">Sports Car ,</span>
+            <span class="tag">Electric SUV ,</span>
+            <span class="tag">Off-Roader ,</span>
+            <span class="tag">Pickup Truck</span>
+        </div>
+    </section>
+
+    <!--Car Collection & Car Details-->
+    <section id="cars" class="collection-section">
+        <h3>Car Collection</h3>
+        <div class="car-container" id="carList">
+            
+            <div class="car-box" data-name="audi a6 sedan">
+                <h4>Audi A6 Sedan</h4>
+                <p>Category: Sedan</p>
+                <p class="price">$55,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 2.0L Turbo 4-Cylinder</p>
+                    <p><strong>Features:</strong> Leather seats, Virtual cockpit, Sunroof</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="bmw x5 suv">
+                <h4>BMW X5 SUV</h4>
+                <p>Category: SUV</p>
+                <p class="price">$65,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 3.0L TwinPower Turbo</p>
+                    <p><strong>Features:</strong> All-wheel drive, Panoramic roof, Heated seats</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="porsche 911 sports car">
+                <h4>Porsche 911 Carrera</h4>
+                <p>Category: Sports Car</p>
+                <p class="price">$114,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 3.0L Twin-Turbo Boxer 6</p>
+                    <p><strong>Features:</strong> Sport Chrono package, Leather interior, Track mode</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="tesla model y electric suv">
+                <h4>Tesla Model Y</h4>
+                <p>Category: Electric SUV</p>
+                <p class="price">$48,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> Dual Motor All-Wheel Drive (Electric)</p>
+                    <p><strong>Features:</strong> Autopilot capability, Glass roof, 330 miles range</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="mercedes benz s class coupe luxury">
+                <h4>Mercedes-Benz S-Class Coupe</h4>
+                <p>Category: Luxury</p>
+                <p class="price">$125,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 4.0L V8 Biturbo</p>
+                    <p><strong>Features:</strong> Magic Body Control, Ambient lighting, Burmester 3D sound</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="ford bronco off-roader">
+                <h4>Ford Bronco Badlands</h4>
+                <p>Category: Off-Roader</p>
+                <p class="price">$49,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 2.7L EcoBoost V6</p>
+                    <p><strong>Features:</strong> Removable doors/roof, 35-inch tires, 4x4 terrain management</p>
+                </details>
+            </div>
+
+            <div class="car-box" data-name="ford f 150 pickup truck">
+                <h4>Ford F-150 Raptor</h4>
+                <p>Category: Pickup Truck</p>
+                <p class="price">$77,000</p>
+                <details>
+                    <summary>Car Details & Specs</summary>
+                    <p><strong>Engine:</strong> 3.5L High-Output V6 EcoBoost</p>
+                    <p><strong>Features:</strong> Fox live-valve shocks, Terrain modes, Heavy-duty skid plates</p>
+                </details>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Enquiry Section-->
+    <section class="enquiry-section">
+        <h3>Enquiry & Test Drive Booking</h3>
+        <form onsubmit="submitForm(event)">
+            <label>Name:</label>
+            <input type="text" id="name" required><br><br>
+            
+            <label>Phone Number:</label>
+            <input type="text" id="phone" required><br><br>
+            
+            <label>Select Car:</label>
+            <select id="carChoice">
+                <option>--Select a Car--</option>
+                <option>Audi A6 Sedan</option>
+                <option>BMW X5 SUV</option>
+                <option>Porsche 911 Carrera</option>
+                <option>Tesla Model Y</option>
+                <option>Mercedes-Benz S-Class Coupe</option>
+                <option>Ford Bronco Badlands</option>
+                <option>Ford F-150 Raptor</option>
+            </select><br><br>
+            
+            <button type="submit">Submit Enquiry</button>
+        </form>
+    </section>
+
+    <!--Services-->
+    <section id="services" class="services-section">
+        <h3>Services</h3>
+        <p>We provide full car servicing, oil changes, engine diagnostics, and periodic maintenance.</p>
+    </section>
+
+    <!--About Us-->
+    <section id="about" class="about-section">
+        <h3>About Us</h3>
+        <p>Our showroom has been delivering premium quality vehicles and exceptional customer support since 2015.</p>
+    </section>
+
+    <!--Contact Section-->
+    <section id="contact" class="contact-section">
+        <h3>Contact Section</h3>
+        <p>Address: 123 Main Street, Cityville</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Email: info@carshowroom.com</p>
+    </section>
+
+    <!--Footer-->
+    <footer>
+        <p> 2026 Car Showroom Website. All rights reserved.</p>
+        <p>
+            <a href="#">Facebook</a> | <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+    <script src="ex.css"></script>
+</body>
+</html>
+  
